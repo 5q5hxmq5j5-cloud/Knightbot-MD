@@ -4,6 +4,7 @@
   --pipe:#2ea44f;
   --ui-bg:rgba(0,0,0,0.35);
   --text:#fff;
+  --btn:#ffffff22;
 }
 
 html,body{
@@ -17,7 +18,6 @@ html,body{
 
 #game{
   display:block;
-  /* let JS set the internal pixel size; CSS controls layout for responsiveness */
   width: min(420px, 94vw);
   height: auto;
   max-height: 92vh;
@@ -36,11 +36,13 @@ html,body{
   right: 0;
   top: 6vh;
   display:flex;
+  gap:12px;
   justify-content:center;
   pointer-events: none;
+  align-items: center;
 }
 
-#score{
+#score, #highscore{
   pointer-events: none;
   font-weight:700;
   color:var(--text);
@@ -50,6 +52,23 @@ html,body{
   font-size:18px;
   box-shadow:0 2px 6px rgba(0,0,0,0.2);
 }
+
+#highscore{ font-size:14px; }
+
+#shareBtn{
+  pointer-events: auto; /* allow clicks */
+  background: var(--btn);
+  color:var(--text);
+  border: none;
+  padding:8px 12px;
+  border-radius: 14px;
+  font-weight:600;
+  font-size:14px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+#shareBtn:active{ transform: translateY(1px); }
 
 #message{
   position: fixed;
@@ -63,4 +82,17 @@ html,body{
   font-size:16px;
   pointer-events: none;
   box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  max-width: 90vw;
+  text-align: center;
+}
+
+#credit{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 2vh;
+  text-align: center;
+  font-size:12px;
+  color: rgba(255,255,255,0.9);
+  pointer-events: none;
 }
