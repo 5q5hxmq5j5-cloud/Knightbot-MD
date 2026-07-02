@@ -1,0 +1,66 @@
+:root{
+  --bg:#70c5ce;
+  --ground:#d18b3b;
+  --pipe:#2ea44f;
+  --ui-bg:rgba(0,0,0,0.35);
+  --text:#fff;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+#game{
+  display:block;
+  /* let JS set the internal pixel size; CSS controls layout for responsiveness */
+  width: min(420px, 94vw);
+  height: auto;
+  max-height: 92vh;
+  margin: calc(env(safe-area-inset-top, 20px)) auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background: linear-gradient(#70c5ce,#9ee0f2);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* HUD */
+#hud{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 6vh;
+  display:flex;
+  justify-content:center;
+  pointer-events: none;
+}
+
+#score{
+  pointer-events: none;
+  font-weight:700;
+  color:var(--text);
+  background:var(--ui-bg);
+  padding:8px 14px;
+  border-radius:20px;
+  font-size:18px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+
+#message{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10vh;
+  background: var(--ui-bg);
+  color: var(--text);
+  padding:10px 16px;
+  border-radius:10px;
+  font-size:16px;
+  pointer-events: none;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
